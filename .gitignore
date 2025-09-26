@@ -3,7 +3,7 @@ vendor/
 bun.lockb
 .bun/
 .cache/
-C:/Users/acer/.bun/
+.bun/
 /.phpunit.cache
 /node_modules
 /public/build
