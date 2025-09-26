@@ -12,22 +12,7 @@
 <body class="bg-accent">
     <div class="h-screen flex flex-col ">
         <div class="px-4">
-            <nav class="flex items-center justify-between h-16 *:text-white">
-                <div>
-                    <a href="#" class="hover:underline">
-                        Logo
-                    </a>
-                </div>
-
-                <div class="flex gap-4">
-                    <a href="#" class="text-sm font-semibold hover:underline">Foro</a>
-                    <a href="#" class="text-sm font-semibold hover:underline">Blog</a>
-                </div>
-
-                <div>
-                    <a href="#" class="text-sm font-semibold hover:underline">Log in &rarr;</a>
-                </div>
-            </nav>
+            <x-forum.navbar />
         </div>
 
         <div class="relative h-full flex items-center justify-center">

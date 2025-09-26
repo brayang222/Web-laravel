@@ -1,9 +1,13 @@
-{{ $question->title }}
+<x-forum.layouts.app>
 
-<p>{{ $question->description }}</p>
+  {{ $question->title }}
+
+  <p>{{ $question->description }}</p>
 
 
-@foreach ($question->answer as $answer)
+  @foreach ($question->answer as $answer)
 
-  <p> {{ $answer }}</p>
-@endforeach
+    <p> {{ $answer }}</p>
+  @endforeach
+
+</x-forum.layouts.app>
