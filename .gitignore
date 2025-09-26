@@ -1,3 +1,9 @@
+node_modules/
+vendor/
+bun.lockb
+.bun/
+.cache/
+C:/Users/acer/.bun/
 /.phpunit.cache
 /node_modules
 /public/build
