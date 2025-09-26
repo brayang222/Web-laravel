@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
             'commentable_type' => Question::class,
         ]);
 
-        $blog = Blog::factory()->create([
+        $blog = Blog::factory(10)->create([
             'user_id' => fn() => User::inRandomOrder()->first()->id,
             'category_id' => fn() => $categories->random()->id,
 

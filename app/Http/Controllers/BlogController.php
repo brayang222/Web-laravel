@@ -7,11 +7,19 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function shown(Blog $blog)
+    public function show(Blog $blog)
     {
-        $blog->load('user_id', 'category_id');
+        $blog->load('user', 'category');
         return view('blogs.show', [
             'blog' => $blog
+        ]);
+    }
+
+    public function index(Blog $blogs)
+    {
+        $blogs = Blog::with(['user', 'category'])->get();
+        return view('blogs.index', [
+            'blogs' => $blogs
         ]);
     }
 }

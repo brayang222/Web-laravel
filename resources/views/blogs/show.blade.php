@@ -1,0 +1,3 @@
+<p>
+  {{ $blog->content }}
+</p>

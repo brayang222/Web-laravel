@@ -1,4 +1,7 @@
-@foreach ($blog->category as $category)
+@foreach ($blogs as $blog)
 
-  {{ $category }}
+  <p>
+    {{ $blog }}
+  </p>
+  <br />
 @endforeach
