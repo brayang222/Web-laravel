@@ -6,10 +6,10 @@
   </div>
 
   <div class="flex gap-4">
-    <a href="#" class="text-sm font-semibold hover:underline flex gap-1">
+    <a href="/" class="text-sm font-semibold hover:underline flex gap-1">
       <x-forum.logos.blog-logo class="h-5" />
       Foro</a>
-    <a href="#" class="text-sm font-semibold hover:underline flex gap-1">
+    <a href="/blogs" class="text-sm font-semibold hover:underline flex gap-1">
       <x-forum.logos.blog-logo class="h-5" />
       Blog</a>
   </div>
