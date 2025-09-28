@@ -12,16 +12,16 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
-Route::get('questions/', [QuestionController::class, 'index'])->name('questions.index');
+Route::get('foro/', [QuestionController::class, 'index'])->name('questions.index');
 
-Route::get('questions/create', [QuestionController::class, 'create'])->name('questions.create')->middleware('auth');
-Route::get('questions/{question}', [QuestionController::class, 'show'])->name('questions.show');
+Route::get('foro/crear', [QuestionController::class, 'create'])->name('questions.create')->middleware('auth');
+Route::get('foro/{question:slug}', [QuestionController::class, 'show'])->name('questions.show');
 
-Route::get('questions/{question}/edit', [QuestionController::class, 'edit'])->name('questions.edit')->middleware('auth');
-Route::put('questions/{question}', [QuestionController::class, 'update'])
-    ->name('questions.update')->middleware('auth', 'can:update,question');
+Route::get('foro/{question:slug}/edit', [QuestionController::class, 'edit'])->name('questions.edit')->middleware('auth');
+Route::put('foro/{question}', [QuestionController::class, 'update'])
+    ->name('foro.update')->middleware('auth', 'can:update,question');
 
-Route::post('questions/', [QuestionController::class, 'store'])->name('questions.store')->middleware('auth');
+Route::post('foro/', [QuestionController::class, 'store'])->name('questions.store')->middleware('auth');
 Route::delete('question/{question}', [QuestionController::class, 'destroy'])
     ->name('question.destroy')->middleware('auth', 'can:delete,question');
 

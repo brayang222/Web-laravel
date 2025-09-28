@@ -9,7 +9,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-accent">
+<body class="bg-black/85">
     <div class="h-screen flex flex-col ">
         <div class="px-4">
             <x-forum.navbar />

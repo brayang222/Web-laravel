@@ -1,5 +1,5 @@
 <x-forum.layouts.home>
-  <ul class="divide-y divide-gray-100">
+  <ul class="divide-y divide-black-100">
 
     @foreach ($questions as $question)
 
