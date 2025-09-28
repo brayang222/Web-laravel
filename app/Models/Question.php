@@ -49,4 +49,25 @@ class Question extends Model
     {
         $this->hearts()->where('user_id', 20)->delete();
     }
+
+    protected static function booted()
+    {
+        static::deleting(function ($question) {
+            $question->hearts()->delete();
+
+            $question->comments()->get()->each(function ($comment) {
+                $comment->hearts()->delete();
+                $comment->delete();
+            });
+
+            $question->answer()->get()->each(function ($answer) {
+                $answer->hearts()->delete();
+
+                $answer->comments()->get()->each(function ($comment) {
+                    $comment->hearts()->delete();
+                    $comment->delete();
+                });
+            });
+        });
+    }
 }
