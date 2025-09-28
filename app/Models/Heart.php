@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Heart extends Model
 {
-    //
+    public $fillable = [
+        'user_id',
+    ];
 }
