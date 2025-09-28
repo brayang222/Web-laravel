@@ -9,7 +9,29 @@ class QuestionController extends Controller
 {
     public function show(Question $question)
     {
-        $question->load('answer', 'category', 'user');
+        $userId = 20;
+        $question->load([
+            'user',
+            'category',
+
+            'answer' => fn($query) => $query->with([
+                'user',
+                'hearts' => fn($query) => $query->where('user_id', $userId),
+                'comments' => fn($query) => $query->with([
+                    'user',
+                    'hearts' => fn($query) => $query->where('user_id', $userId),
+
+                ]),
+            ]),
+
+            'comments' => fn($query) => $query->with([
+                'user',
+                'hearts' => fn($query) => $query->where('user_id', $userId),
+            ]),
+
+            'hearts' => fn($query) => $query->where('user_id', $userId),
+        ]);
+
         return view('questions.show', [
             'question' => $question,
         ]);
