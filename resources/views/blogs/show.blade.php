@@ -10,10 +10,7 @@
       <p>{{ $blog->user->name }}</p>
       <p>{{ $blog->created_at->diffForHumans() }}</p>
     </div>
-    @foreach ($blog->comments as $comments)
-      <div>{{ $comments }}</div>
-      Hola
-    @endforeach
+    <livewire:comment :commentable="$blog" />
   </section>
 
 </x-forum.layouts.app>
