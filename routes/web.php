@@ -14,18 +14,18 @@ use Laravel\Fortify\Features;
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('questions/', [QuestionController::class, 'index'])->name('questions.index');
 
-Route::get('questions/create', [QuestionController::class, 'create'])->name('questions.create');
+Route::get('questions/create', [QuestionController::class, 'create'])->name('questions.create')->middleware('auth');
 Route::get('questions/{question}', [QuestionController::class, 'show'])->name('questions.show');
 
-Route::get('questions/{question}/edit', [QuestionController::class, 'edit'])->name('questions.edit');
-Route::put('questions/{question}', [QuestionController::class, 'update'])->name('questions.update');
+Route::get('questions/{question}/edit', [QuestionController::class, 'edit'])->name('questions.edit')->middleware('auth');
+Route::put('questions/{question}', [QuestionController::class, 'update'])->name('questions.update')->middleware('auth');
 
-Route::post('questions/', [QuestionController::class, 'store'])->name('questions.store');
-Route::delete('question/{question}', [QuestionController::class, 'destroy'])->name('question.destroy');
+Route::post('questions/', [QuestionController::class, 'store'])->name('questions.store')->middleware('auth');
+Route::delete('question/{question}', [QuestionController::class, 'destroy'])->name('question.destroy')->middleware('auth');
 
 Route::get('blogs', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
-Route::post('answers/{question}', [AnswerController::class, 'store'])->name('answers.store');
+Route::post('answers/{question}', [AnswerController::class, 'store'])->name('answers.store')->middleware('auth');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
