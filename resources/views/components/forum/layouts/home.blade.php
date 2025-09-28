@@ -36,7 +36,7 @@
                         y crecer en el mundo de la programación. Únete a nuestra comunidad, participa en discusiones y
                         aprende de otros profesionales.</p>
                     <div class="flex items-center justify-center gap-6">
-                        <a href="#"
+                        <a href="{{ route('questions.create') }}"
                             class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-white shadow-xs hover:bg-indigo-500">Preguntar</a>
                         <a href="#"
                             class="text-sm font-semibold text-white hover:bg-gray-500 px-4 py-2 rounded-md bg-gray-700">Login
